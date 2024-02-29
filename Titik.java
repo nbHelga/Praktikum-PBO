@@ -3,7 +3,7 @@ public class Titik {
     float ordinat;
     static float counterTitik;
 
-    Titik(){
+    public Titik(){
         absis = 0;
         ordinat = 0;
         counterTitik++;
@@ -16,26 +16,48 @@ public class Titik {
     //     this.counterTitik = counterTitik++;
     // }
 
-    Titik (float newAbsis, float newOrdinat){
-        newAbsis = absis;
-        newOrdinat = ordinat;
+    public Titik (float newAbsis, float newOrdinat){
+        absis = newAbsis;
+        ordinat = newOrdinat;
         counterTitik++;
     }
 
-    void setAbsis(float a){
+    public void setAbsis(float a){
         absis = a;
     }
-    void setOrdinat(float o){
+    public void setOrdinat(float o){
         ordinat = o;
     }
-    float getAbsis(){
+    public float getAbsis(){
         return absis;
     }
-    float getOrdinat(){
+    public float getOrdinat(){
         return ordinat;
     }
 
-    static float getCounterTitik(){
+    public static float getCounterTitik(){
         return counterTitik;
+    }
+
+    public float getJarakPusat(){
+        return (float) Math.sqrt(absis*absis+ordinat*ordinat);
+    }
+
+    public void refleksiX(){
+        this.ordinat = -(this.ordinat);
+    }
+
+    public void refleksiY(){
+        this.absis = this.absis*(-1); 
+    }
+
+    public Titik getRefleksiX(){
+        return new Titik(this.absis, -(this.ordinat));
+    }
+
+    public Titik getRefleksiY(){
+        // return new Titik(-(this.absis), this.ordinat);
+        Titik t = new Titik(-(this.absis), this.ordinat);
+        return t;
     }
 }
