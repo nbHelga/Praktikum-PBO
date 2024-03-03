@@ -47,10 +47,6 @@ public class Mahasiswa {
     }
 
     public WaliMahasiswa getWali(){
-        // String nama = WaliMahasiswa.getNama();
-        // String nomorHp = WaliMahasiswa.getNomorHp();
-        // String alamat = WaliMahasiswa.getAlamat();
-        // WaliMahasiswa wali = (nama, nomorHp, alamat);
         return wali;
     }
 
